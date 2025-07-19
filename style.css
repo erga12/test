@@ -194,6 +194,7 @@ body {
     backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     padding: 10px;
     display: flex;
     justify-content: space-around;
@@ -213,6 +214,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 8px;
+    transition: opacity 0.3s ease-in-out;
     padding-bottom: 10px;
 }
 
@@ -242,12 +244,15 @@ body {
     flex-direction: column;
     pointer-events: none;
     opacity: 0;
-    transition: opacity 0.2s ease-in-out 0.2s;
+    border-radius: 40px;
+    transform: translate(var(--start-x, 0), var(--start-y, 0)) scale(var(--start-scale-x, 1), var(--start-scale-y, 1));
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out;
 }
 
 .app-view.active {
     pointer-events: auto;
     opacity: 1;
+    transform: translate(0, 0) scale(1);
 }
 
 .app-header {
@@ -296,4 +301,43 @@ body {
 
 .app-clone i {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mengembalikan posisi dock dan pagination */
+.dock {
+    margin-bottom: 15px;
+}
+.pagination {
+    padding-bottom: 50px; /* Beri sedikit ruang di atas gesture bar */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style untuk indikator gestur */
+.gesture-indicator-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 101; /* Pastikan di atas app-view */
+}
+.gesture-indicator {
+    width: 135px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+/* Sembunyikan dock dan pagination saat aplikasi terbuka */
+.mobile-screen.app-is-open .dock {
+    transform: translateY(100%);
+    opacity: 0;
+}
+.mobile-screen.app-is-open .pagination {
+    opacity: 0;
 }
