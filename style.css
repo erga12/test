@@ -303,18 +303,17 @@ body {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Mengembalikan posisi dock dan pagination */
 .dock {
     margin-bottom: 15px;
 }
+
 .pagination {
-    padding-bottom: 50px; /* Beri sedikit ruang di atas gesture bar */
+    padding-bottom: 50px;
     position: absolute;
     bottom: 0;
     width: 100%;
 }
 
-/* Style untuk indikator gestur */
 .gesture-indicator-container {
     position: absolute;
     bottom: 0;
@@ -324,8 +323,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 101; /* Pastikan di atas app-view */
+    z-index: 101;
 }
+
 .gesture-indicator {
     width: 135px;
     height: 5px;
@@ -333,11 +333,11 @@ body {
     border-radius: 10px;
 }
 
-/* Sembunyikan dock dan pagination saat aplikasi terbuka */
 .mobile-screen.app-is-open .dock {
     transform: translateY(100%);
     opacity: 0;
 }
+
 .mobile-screen.app-is-open .pagination {
     opacity: 0;
 }
