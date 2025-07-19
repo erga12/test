@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(updateClock, 1000);
   updateClock();
 
-  // Definisikan semua elemen penting di sini
   const mobileScreen = document.querySelector('.mobile-screen');
   const appView = document.querySelector(".app-view");
   const appTitle = appView.querySelector(".app-title");
@@ -65,13 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     appContent.innerHTML = contentHTML;
     appView.classList.add("active");
-    // Tambahkan class ini untuk menyembunyikan dock & pagination
     mobileScreen.classList.add('app-is-open');
   }
 
   function closeApp() {
     appView.classList.remove("active");
-    // Hapus class ini untuk menampilkan kembali dock & pagination
     mobileScreen.classList.remove('app-is-open');
   }
   backButton.addEventListener("click", closeApp);
@@ -148,24 +145,20 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", scalePhone);
   scalePhone();
 
-  /* --- LOGIKA GESTURE NAVIGATION --- */
   let touchStartX_gesture = 0;
   let touchStartY_gesture = 0;
   let touchEndX_gesture = 0;
   let touchEndY_gesture = 0;
 
-  // FUNGSI UNTUK KEMBALI KE HOME (GESER DARI BAWAH KE ATAS)
   function goHome() {
     if (appView.classList.contains('active')) {
       closeApp();
     }
-    // Langsung kembali ke halaman pertama
     screenContainer.style.transform = 'translateX(0%)';
     currentPage = 0;
     updateDots();
   }
 
-  // FUNGSI UNTUK KEMBALI/TUTUP APLIKASI (GESER DARI SAMPING)
   function goBack() {
     if (appView.classList.contains('active')) {
       closeApp();
@@ -181,13 +174,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const backGestureArea = 40;
     const homeGestureArea = 50;
 
-    // Cek gestur geser ke atas dari bawah
     if (touchStartY_gesture > (screenHeight - homeGestureArea) && deltaY < -50 && Math.abs(deltaX) < 50) {
       goHome();
       return;
     }
 
-    // Cek gestur geser dari samping
     if (Math.abs(deltaX) > 50 && Math.abs(deltaY) < 50) {
       if (touchStartX_gesture < backGestureArea && deltaX > 50) {
         goBack();
