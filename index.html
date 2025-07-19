@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyperOS Home Screen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="frame-phone">
+        <div class="mobile-screen">
+            <div class="status-bar">
+                <span class="time" id="status-bar-time">10:30</span>
+                <div class="status-icons">
+                    <i class="fa-solid fa-signal"></i>
+                    <i class="fa-solid fa-wifi"></i>
+                    <i class="fa-solid fa-battery-full"></i>
+                </div>
+            </div>
+
+            <div class="screen-container">
+                <div class="page" id="page-1">
+                    <main class="home-content">
+                        <div class="widget clock-widget">
+                            <div class="clock-time" id="widget-time">10:30</div>
+                            <div class="clock-date" id="widget-date">Sel, 28 Mei</div>
+                        </div>
+
+                        <div class="widget weather-widget">
+                            <i class="fa-solid fa-cloud-sun"></i>
+                            <div class="weather-info">
+                                <span class="temperature">28°</span>
+                                <span class="location">Jakarta</span>
+                            </div>
+                        </div>
+
+                        <div class="app-grid">
+                            <div class="app-icon" data-app="Kamera">
+                                <div class="icon-bg"><i class="fa-solid fa-camera"></i></div><span>Kamera</span>
+                            </div>
+                            <div class="app-icon" data-app="Galeri">
+                                <div class="icon-bg"><i class="fa-solid fa-image"></i></div><span>Galeri</span>
+                            </div>
+                            <div class="app-icon" data-app="Setelan">
+                                <div class="icon-bg"><i class="fa-solid fa-gear"></i></div><span>Setelan</span>
+                            </div>
+                            <div class="app-icon" data-app="Musik">
+                                <div class="icon-bg"><i class="fa-solid fa-music"></i></div><span>Musik</span>
+                            </div>
+                            <div class="app-icon" data-app="File Manager">
+                                <div class="icon-bg"><i class="fa-solid fa-folder"></i></div><span>File</span>
+                            </div>
+                            <div class="app-icon" data-app="Kompas">
+                                <div class="icon-bg"><i class="fa-solid fa-compass"></i></div><span>Kompas</span>
+                            </div>
+                            <div class="app-icon" data-app="Kalkulator">
+                                <div class="icon-bg"><i class="fa-solid fa-calculator"></i></div><span>Kalkulator</span>
+                            </div>
+                            <div class="app-icon" data-app="Jam">
+                                <div class="icon-bg"><i class="fa-solid fa-clock"></i></div><span>Jam</span>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+
+                <div class="page" id="page-2">
+                    <main class="home-content">
+                        <div class="app-grid">
+                            <div class="app-icon" data-app="Pesan">
+                                <div class="icon-bg"><i class="fa-solid fa-comment-dots"></i></div><span>Pesan</span>
+                            </div>
+                            <div class="app-icon" data-app="Kontak">
+                                <div class="icon-bg"><i class="fa-solid fa-address-book"></i></div><span>Kontak</span>
+                            </div>
+                            <div class="app-icon" data-app="Kalender">
+                                <div class="icon-bg"><i class="fa-solid fa-calendar-days"></i></div>
+                                <span>Kalender</span>
+                            </div>
+                            <div class="app-icon" data-app="Cuaca">
+                                <div class="icon-bg"><i class="fa-solid fa-cloud-sun-rain"></i></div><span>Cuaca</span>
+                            </div>
+                            <div class="app-icon" data-app="Peta">
+                                <div class="icon-bg"><i class="fa-solid fa-map-location-dot"></i></div><span>Peta</span>
+                            </div>
+                            <div class="app-icon" data-app="Catatan">
+                                <div class="icon-bg"><i class="fa-solid fa-note-sticky"></i></div><span>Catatan</span>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <div class="dot active" data-page="0"></div>
+                <div class="dot" data-page="1"></div>
+            </div>
+
+            <div class="dock">
+                <div class="app-icon" data-app="Telepon" role="button" aria-label="Telepon">
+                    <div class="icon-bg"><i class="fa-solid fa-phone"></i></div>
+                </div>
+                <div class="app-icon" data-app="SMS" role="button" aria-label="SMS">
+                    <div class="icon-bg"><i class="fa-solid fa-comment-sms"></i></div>
+                </div>
+                <div class="app-icon" data-app="Browser" role="button" aria-label="Browser">
+                    <div class="icon-bg"><i class="fa-brands fa-chrome"></i></div>
+                </div>
+                <div class="app-icon" data-app="Email" role="button" aria-label="Email">
+                    <div class="icon-bg"><i class="fa-solid fa-envelope"></i></div>
+                </div>
+            </div>
+
+            <div class="app-view">
+                <div class="app-header">
+                    <button class="back-button" aria-label="Kembali"><i class="fa-solid fa-chevron-left"></i></button>
+                    <span class="app-title">Nama Aplikasi</span>
+                </div>
+                <div class="app-content">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="g.js"></script>
+</body>
+
+</html>
